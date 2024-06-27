@@ -5,6 +5,9 @@
   "repository": "https://github.com/CyberLas/contrab.git",
   "author": "Carlos Angeles <caamnil@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node functions/send-message.js"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
