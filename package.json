@@ -6,6 +6,7 @@
   "author": "Carlos Angeles <caamnil@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@netlify/functions": "^2.8.0"
+    "@netlify/functions": "^2.8.0",
+    "pg-promise": "^11.8.0"
   }
 }
