@@ -1,10 +1,30 @@
-const { schedule } = require("@netlify/functions");
+const	pgp			= pgPromise({ schema: "BDLogSoporte" }),
+				= pgp({
+			host					:'ep-rough-hat-a5n0tgnh.us-east-2.aws.neon.tech',
+			port					:5432,
+			database				:'culqiTest',
+			user					:'culqiTest_owner',
+			password				:'XD4Fja9lqdMS',
+			max						: 30,
+			ssl						: true,
+			idleTimeoutMillis		: 360000,
+			connectionTimeoutMillis	: 360000
+		})
 
-const handler = async function () {
-  console.log('calling func!');
-  return {
-    statusCode: 200,
-  };
+
+exports.handler = async (event, context) => {
+	try {
+		await postgresDB.oneOrNone(`INSERT INTO test(test) VALUES($1)`, ['hi']).then((res) => res)
+		return {
+			statusCode: 200,
+			body: JSON.stringify({ message: 'Mensaje enviado correctamente' })
+		};
+	} catch (error) {
+		console.error(error);
+
+		return {
+			statusCode: 500,
+			body: JSON.stringify({ message: 'Error al enviar el mensaje' })
+		};
+	}
 };
-
-exports.handler = schedule("*/10 * * * *" , handler);
