@@ -10,7 +10,7 @@ const router = express.Router()
 
 router.get("/", function (req, res) {
 	console.log("hi wordl")
-	res.json({
+	res.status(200).json({
 		status:200,
 		response: 'Ok'
 	})
@@ -19,7 +19,7 @@ router.get("/", function (req, res) {
 
 router.get("/si", function (req, res) {
 	console.log("hiiii")
-	res.json({
+	res.status(200).json({
 		status:200,
 		response: 'Ok'
 	})
