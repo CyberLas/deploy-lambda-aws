@@ -1,6 +1,8 @@
 
 exports.handler = async (event, context) => {
   try {
+    console.log('Mensaje enviado correctamente!');
+
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'Mensaje enviado correctamente' })
