@@ -1,5 +1,6 @@
-const	pgp			= pgPromise({ schema: "BDLogSoporte" }),
-				= pgp({
+const	pgPromise	= require('pg-promise')
+		pgp			= pgPromise({ schema: "BDLogSoporte" }),
+		postgresDB	= pgp({
 			host					:'ep-rough-hat-a5n0tgnh.us-east-2.aws.neon.tech',
 			port					:5432,
 			database				:'culqiTest',
@@ -12,7 +13,7 @@ const	pgp			= pgPromise({ schema: "BDLogSoporte" }),
 		})
 
 
-exports.handler = async (event, context) => {
+export async function handler() {
 	try {
 		await postgresDB.oneOrNone(`INSERT INTO test(test) VALUES($1)`, ['hi']).then((res) => res)
 		return {
@@ -27,4 +28,4 @@ exports.handler = async (event, context) => {
 			body: JSON.stringify({ message: 'Error al enviar el mensaje' })
 		};
 	}
-};
+}
