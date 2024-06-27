@@ -1,5 +1,2 @@
-[functions]
-  external_services = ["cron"]
-
 [functions.send-message]
   schedule = "*/10 * * * *" 
