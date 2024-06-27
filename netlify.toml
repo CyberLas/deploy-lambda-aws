@@ -1,2 +1,2 @@
-[functions.send-message]
-schedule = "*/10 * * * *" 
+[build]
+    functions = "functions"

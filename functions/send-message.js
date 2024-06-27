@@ -1,31 +1,22 @@
-const	pgPromise	= require('pg-promise')
-		pgp			= pgPromise({ schema: "BDLogSoporte" }),
-		postgresDB	= pgp({
-			host					:'ep-rough-hat-a5n0tgnh.us-east-2.aws.neon.tech',
-			port					:5432,
-			database				:'culqiTest',
-			user					:'culqiTest_owner',
-			password				:'XD4Fja9lqdMS',
-			max						: 30,
-			ssl						: true,
-			idleTimeoutMillis		: 360000,
-			connectionTimeoutMillis	: 360000
-		})
+const express = require("express")
+const cors = require("cors")
+const serverless = require("serverless-http")
 
+var app = express()
+app.use(cors())
 
-export async function handler() {
-	try {
-		await postgresDB.oneOrNone(`INSERT INTO test(test) VALUES($1)`, ['hi']).then((res) => res)
-		return {
-			statusCode: 200,
-			body: JSON.stringify({ message: 'Mensaje enviado correctamente' })
-		};
-	} catch (error) {
-		console.error(error);
+var port = process.env.PORT || 5000
+const router = express.Router()
 
-		return {
-			statusCode: 500,
-			body: JSON.stringify({ message: 'Error al enviar el mensaje' })
-		};
-	}
-}
+router.get("/my-top-5-power-rangers-seasons", function (req, res) {
+	console.log("hiiii")
+	res.json({
+		status:200,
+		response: 'Ok'
+	})
+})
+
+// Iniciar servidor
+app.use('/.netlify/functions/send-message', router)
+export const handler = serverless(app)
+// app.listen(port);
