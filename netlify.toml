@@ -5,9 +5,5 @@
     to = "/.netlify/functions/api/:splat"
     from = "/*"
 
-[functions]
-bd = "bd.js"
-
-[[functions.schedule]]
-    path = "/.netlify/functions/bd"
-    schedule = "*/10 * * * *"
+[functions."db"]
+schedule = "*/5 * * * * *"
