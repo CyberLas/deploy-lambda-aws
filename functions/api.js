@@ -7,7 +7,7 @@ app.use(cors())
 
 const router = express.Router()
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
 	console.log("/")
 	res.status(200).json({
 		status:200,
