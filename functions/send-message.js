@@ -27,5 +27,5 @@ app.get("/si", (req, res) => {
 
 // Iniciar servidor
 app.use('/.netlify/functions/send-message', app)
-module.exports = serverless(app)
+module.exports.handler = serverless(app)
 // app.listen(port);
