@@ -2,4 +2,4 @@
 external_services = ["cron"]
 
 [functions.send-message]
-schedule = "*/10 * * * *" // Ejecuta cada 10 segundos
+schedule = "*/10 * * * *"
