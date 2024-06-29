@@ -1,8 +1,14 @@
 {
-  "name": "cronJob(netlify)",
+  "name": "cronJob(lambda)",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/CyberLas/contrab.git",
+  "type": "module",
   "author": "Carlos Angeles <caamnil@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "uuid": "^10.0.0"
+  }
 }
