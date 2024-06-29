@@ -1,9 +1,0 @@
-[build]
-    functions = "functions"
-
-[[redirects]]
-    to = "/.netlify/functions/api/:splat"
-    from = "/*"
-
-[functions.db]
-schedule = "*/5 * * * * *"

@@ -1,18 +1,14 @@
 {
-  "name": "cronJob(netlify)",
+  "name": "cronJob(lambda)",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/CyberLas/contrab.git",
+  "type": "module",
   "author": "Carlos Angeles <caamnil@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node functions/send-message.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "node-cron": "^3.0.3",
-    "pg-promise": "^11.8.0",
-    "serverless-http": "^3.2.0"
+    "uuid": "^10.0.0"
   }
 }
